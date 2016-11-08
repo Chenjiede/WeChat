@@ -11,7 +11,7 @@ import UIKit
 class WCHomeTableController: WCBaseTableController {
 
     var dataArray = [WCHomeListModel]()
-    
+    weak var eyeAnimationView : WCEyeAnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,15 @@ class WCHomeTableController: WCBaseTableController {
         setupRandomData(count: 20)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 判断眼睛视图是否存在
+        if eyeAnimationView == nil {
+            setupEyeAnimationView()
+        }
+    }
+    
     /// 创建随机数据
     private func setupRandomData(count : Int) {
         for _ in 0 ..< count {
@@ -36,6 +45,29 @@ class WCHomeTableController: WCBaseTableController {
             
             dataArray.append(model)
         }
+    }
+    
+    /// 创建眼睛动画视图
+    private func setupEyeAnimationView() {
+        let eyeView = WCEyeAnimationView()
+        eyeView.bounds = CGRect(x: 0, y: 0, width: 65, height: 44)
+        eyeView.center = CGPoint(x: view.bounds.width * 0.5, y: 70)
+        tableView.superview?.insertSubview(eyeView, at: 0)
+        eyeAnimationView = eyeView
+        
+        // 添加手势
+        let pan = UIPanGestureRecognizer.init(target: self, action: #selector(panView(pan:)))
+        tableView.superview?.addGestureRecognizer(pan)
+//        pan.delegate = self
+    }
+    
+    
+}
+
+// MARK: - 手势处理方法
+extension WCHomeTableController {
+    @objc func panView(pan : UIPanGestureRecognizer) {
+        JDLog(message: "12")
     }
 }
 
@@ -48,9 +80,14 @@ extension WCHomeTableController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCellIdentifier, for: indexPath) as! WCHomeCell
-        
+
         cell.listModel = dataArray[indexPath.row]
         
         return cell
     }
+}
+
+// MARK: - scrollDelegate
+extension WCHomeTableController {
+    
 }
