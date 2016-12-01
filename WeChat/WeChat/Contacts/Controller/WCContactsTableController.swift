@@ -9,44 +9,34 @@
 import UIKit
 
 class WCContactsTableController: WCBaseTableController {
-    
+    /// 模型数组
     var dataArray = [WCContactModel]()
-    
+    /// 标题数组
+    var sectionTitles = [String]()
+    /// 分组数组
+    var sectionArray = [[WCContactModel]]()
     
     /// 搜索控制器
-    private lazy var searchController : UISearchController = {
-        let searchVC = UISearchController.init(searchResultsController: WCContactsSearchResultController())
-        searchVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.95)
+    private lazy var searchController : WCSearchController = {
         
-        return searchVC
+        return WCSearchController.customSearchController()
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 设置tableView的顶部视图
-        let bar = searchController.searchBar
-        bar.barStyle = UIBarStyle.default
-        bar.isTranslucent = true
-        bar.barTintColor = GlobalBackgroundColor()
-        bar.tintColor = GlobalTintColor()
-        let imageView = bar.subviews.first?.subviews.first as! UIImageView
-        imageView.layer.borderColor = GlobalBackgroundColor().cgColor
-        imageView.layer.borderWidth = 1
+        tableView.tableHeaderView = searchController.customSearchBar()
+        tableView.sectionHeaderHeight = 25
         
-        bar.layer.borderColor = UIColor.red.cgColor
-        bar.showsBookmarkButton = true
-        
-        bar.setImage(UIImage.init(named: "VoiceSearchStartBtn"), for: .bookmark, state: .normal)
-        
-        // 设置尺寸
-        bar.height = 44
+        // 注册cell
+        tableView.register(WCContactsCell.classForCoder(), forCellReuseIdentifier: ContactsCellIdentifier)
+        tableView.rowHeight = WCContactsCell.fixedHeight()
         
         // tableView的设置
-        tableView.tableHeaderView = bar
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.sectionIndexColor = UIColor.lightGray
         tableView.sectionIndexBackgroundColor = UIColor.clear
-        tableView.sectionHeaderHeight = 25
         
         // 生成数据
         getDataWithCount(count: 30)
@@ -87,34 +77,79 @@ class WCContactsTableController: WCBaseTableController {
         
         // 创建一个临时数组
         let numberOfSections = localizedIndex.sectionTitles.count
-        var newSectionArray = [[String]]()
+        var newSectionArray = [[WCContactModel]]()
         for _ in 0 ..< numberOfSections {
-            newSectionArray.append([String]())
+            newSectionArray.append([WCContactModel]())
         }
         
         // 将模型放进数组
+        for model in dataArray {
+            let sectionIndex = localizedIndex.section(for: model, collationStringSelector: #selector(getter: WCContactModel.name))
+            newSectionArray[sectionIndex].append(model)
+        }
         
+        // 对每个分组的模型进行排序
+        for index in 0 ..< numberOfSections {
+            let arrayForSection = newSectionArray[index]
+            let sortArray = localizedIndex.sortedArray(from: arrayForSection, collationStringSelector: #selector(getter: WCContactModel.name))
+            newSectionArray[index] = sortArray as! [WCContactModel]
+        }
+        
+        // 移除空的分组，并设置组标题
+        for index in 0 ..< newSectionArray.count {
+            let array = newSectionArray[index]
+            if array.count != 0 {
+                sectionArray.append(array)
+                sectionTitles.append(localizedIndex.sectionTitles[index])
+            }
+        }
+        
+        // 创建第一组数据
+        var operrationModels = [WCContactModel]()
+        let dicts = [["name" : "新的朋友", "imageName" : "plugins_FriendNotify"],
+                     ["name" : "群聊", "imageName" : "add_friend_icon_addgroup"],
+                     ["name" : "标签", "imageName" : "Contact_icon_ContactTag"],
+                     ["name" : "公众号", "imageName" : "add_friend_icon_offical"]]
+        for dict in dicts {
+            let contactModel = WCContactModel()
+            contactModel.name = dict["name"]
+            contactModel.imageName = dict["imageName"]
+            operrationModels.append(contactModel)
+        }
+        
+        sectionArray.insert(operrationModels, at: 0)
+        sectionTitles.insert("", at: 0)
     }
 }
 
-// MARK: - Table view data source
+// MARK: - Tableview
 extension WCContactsTableController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return sectionTitles.count
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return sectionArray[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: HomeCellIdentifier, for: indexPath) as! WCHomeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactsCellIdentifier, for: indexPath) as! WCContactsCell
+         
+        cell.contactModel = sectionArray[indexPath.section][indexPath.row]
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "constactCell")
-        if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: "constactCell")
-        }
+        return cell
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         
-        cell?.textLabel?.text = "message -- \(indexPath.row)"
+        return sectionTitles
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return cell!
+        return sectionTitles[section]
     }
 }
 

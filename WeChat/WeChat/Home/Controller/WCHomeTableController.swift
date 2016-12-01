@@ -13,6 +13,12 @@ class WCHomeTableController: WCBaseTableController {
     var dataArray = [WCHomeListModel]()
     weak var eyeAnimationView : WCEyeAnimationView?
     
+    /// 搜索控制器
+    private lazy var searchController : WCSearchController = {
+       
+        return WCSearchController.customSearchController()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +28,8 @@ class WCHomeTableController: WCBaseTableController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         tableView.backgroundColor = UIColor.clear
+        tableView.tableHeaderView = searchController.customSearchBar()
+        tableView.sectionHeaderHeight = 25
         
         setupRandomData(count: 20)
     }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743DFD1B1DEF17EA0096D979 /* WCTimeLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DFD1A1DEF17EA0096D979 /* WCTimeLineController.swift */; };
+		743DFD1F1DEF1C6B0096D979 /* WCTimeLineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DFD1E1DEF1C6B0096D979 /* WCTimeLineCellModel.swift */; };
+		743DFD211DEF1D230096D979 /* WCTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DFD201DEF1D230096D979 /* WCTimeLineCell.swift */; };
+		74696CC61DEC739700595E32 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74696CC51DEC739700595E32 /* Me.storyboard */; };
+		74696CC91DEC789100595E32 /* WCSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696CC81DEC789100595E32 /* WCSearchController.swift */; };
 		748D652D1DCF81DB00F3658D /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 748D65101DCF81DB00F3658D /* 0.jpg */; };
 		748D652E1DCF81DB00F3658D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 748D65111DCF81DB00F3658D /* 1.jpg */; };
 		748D652F1DCF81DB00F3658D /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 748D65121DCF81DB00F3658D /* 10.jpg */; };
@@ -52,6 +57,9 @@
 		74D1D5441DCCB8070083242E /* WCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1D53C1DCCB8070083242E /* WCNavigationController.swift */; };
 		74D1D5451DCCB8070083242E /* WCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1D53D1DCCB8070083242E /* WCTabBarController.swift */; };
 		74D1D5461DCCB8070083242E /* WCMeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1D5401DCCB8070083242E /* WCMeTableController.swift */; };
+		74DB01A01DD49D9C007926AE /* JDArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB019F1DD49D9C007926AE /* JDArray+Extension.swift */; };
+		74DB01A31DD4A3C9007926AE /* WCContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB01A21DD4A3C9007926AE /* WCContactsCell.swift */; };
+		74DCE7AA1DD9DFE60057ABA4 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DCE7A91DD9DFE60057ABA4 /* Discover.storyboard */; };
 		74F313D21DCB68D80063D03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F313D11DCB68D80063D03C /* AppDelegate.swift */; };
 		74F313D91DCB68D80063D03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F313D81DCB68D80063D03C /* Assets.xcassets */; };
 		74F313E71DCB68D80063D03C /* WeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F313E61DCB68D80063D03C /* WeChatTests.swift */; };
@@ -80,6 +88,11 @@
 /* Begin PBXFileReference section */
 		00597008559FD4895E65211A /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		1E50BD30CEE1C47DBF2A12C5 /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
+		743DFD1A1DEF17EA0096D979 /* WCTimeLineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCTimeLineController.swift; sourceTree = "<group>"; };
+		743DFD1E1DEF1C6B0096D979 /* WCTimeLineCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCTimeLineCellModel.swift; sourceTree = "<group>"; };
+		743DFD201DEF1D230096D979 /* WCTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCTimeLineCell.swift; sourceTree = "<group>"; };
+		74696CC51DEC739700595E32 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		74696CC81DEC789100595E32 /* WCSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSearchController.swift; sourceTree = "<group>"; };
 		748D65101DCF81DB00F3658D /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		748D65111DCF81DB00F3658D /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		748D65121DCF81DB00F3658D /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -125,6 +138,9 @@
 		74D1D53C1DCCB8070083242E /* WCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCNavigationController.swift; sourceTree = "<group>"; };
 		74D1D53D1DCCB8070083242E /* WCTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCTabBarController.swift; sourceTree = "<group>"; };
 		74D1D5401DCCB8070083242E /* WCMeTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCMeTableController.swift; sourceTree = "<group>"; };
+		74DB019F1DD49D9C007926AE /* JDArray+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JDArray+Extension.swift"; sourceTree = "<group>"; };
+		74DB01A21DD4A3C9007926AE /* WCContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCContactsCell.swift; sourceTree = "<group>"; };
+		74DCE7A91DD9DFE60057ABA4 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		74F313CE1DCB68D80063D03C /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F313D11DCB68D80063D03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F313D81DCB68D80063D03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +189,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		743DFD1C1DEF1C250096D979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				743DFD1E1DEF1C6B0096D979 /* WCTimeLineCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		743DFD1D1DEF1C3D0096D979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				743DFD201DEF1D230096D979 /* WCTimeLineCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74696CC71DEC780300595E32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		748D650F1DCF81DB00F3658D /* cell_icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,15 +253,15 @@
 			children = (
 				74C343871DD2069D009598E9 /* WCContactModel.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		74D1D50D1DCCB7190083242E /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				748D650F1DCF81DB00F3658D /* cell_icons */,
-				74D1D50E1DCCB72A0083242E /* WCCellKey.swift */,
 				74D1D50F1DCCB72A0083242E /* JDConst.swift */,
+				74D1D50E1DCCB72A0083242E /* WCCellKey.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -256,8 +295,9 @@
 		74D1D5331DCCB8070083242E /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				74C343861DD20683009598E9 /* Model */,
 				74D1D5341DCCB8070083242E /* Controller */,
+				74C343861DD20683009598E9 /* Model */,
+				74DB01A11DD4A3A8007926AE /* View */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -265,8 +305,8 @@
 		74D1D5341DCCB8070083242E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				74D1D5351DCCB8070083242E /* WCContactsTableController.swift */,
 				74C343841DD1FB96009598E9 /* WCContactsSearchResultController.swift */,
+				74D1D5351DCCB8070083242E /* WCContactsTableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -275,6 +315,9 @@
 			isa = PBXGroup;
 			children = (
 				74D1D5371DCCB8070083242E /* Controller */,
+				743DFD1C1DEF1C250096D979 /* Model */,
+				743DFD1D1DEF1C3D0096D979 /* View */,
+				74DCE7A91DD9DFE60057ABA4 /* Discover.storyboard */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -283,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				74D1D5381DCCB8070083242E /* WCDiscoverTableController.swift */,
+				743DFD1A1DEF17EA0096D979 /* WCTimeLineController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				74D1D53A1DCCB8070083242E /* Controller */,
+				74696CC71DEC780300595E32 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -300,6 +345,7 @@
 			children = (
 				74D1D53B1DCCB8070083242E /* WCBaseTableController.swift */,
 				74D1D53C1DCCB8070083242E /* WCNavigationController.swift */,
+				74696CC81DEC789100595E32 /* WCSearchController.swift */,
 				74D1D53D1DCCB8070083242E /* WCTabBarController.swift */,
 			);
 			path = Controller;
@@ -309,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				74D1D53F1DCCB8070083242E /* Controller */,
+				74696CC51DEC739700595E32 /* Me.storyboard */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -324,8 +371,8 @@
 		74D1D5471DCCB81C0083242E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74D1D51A1DCCB7DB0083242E /* WCHomeCell.swift */,
 				74C343821DD1F568009598E9 /* WCEyeAnimationView.swift */,
+				74D1D51A1DCCB7DB0083242E /* WCHomeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +383,14 @@
 				74D1D51B1DCCB7DB0083242E /* WCHomeListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		74DB01A11DD4A3A8007926AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74DB01A21DD4A3C9007926AE /* WCContactsCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		74F313C51DCB68D80063D03C = {
@@ -399,6 +454,7 @@
 		74F313FF1DCB6D1F0063D03C /* Category(分类) */ = {
 			isa = PBXGroup;
 			children = (
+				74DB019F1DD49D9C007926AE /* JDArray+Extension.swift */,
 				74F314001DCB7DF80063D03C /* JDDate+Extension.swift */,
 				74D1D5121DCCB7390083242E /* UIView+Extension.swift */,
 			);
@@ -531,6 +587,7 @@
 				748D65411DCF81DB00F3658D /* 6.jpg in Resources */,
 				748D65381DCF81DB00F3658D /* 19.jpg in Resources */,
 				748D65351DCF81DB00F3658D /* 16.jpg in Resources */,
+				74DCE7AA1DD9DFE60057ABA4 /* Discover.storyboard in Resources */,
 				748D65481DCF81DB00F3658D /* icon3.jpg in Resources */,
 				748D65441DCF81DB00F3658D /* 9.jpg in Resources */,
 				748D65391DCF81DB00F3658D /* 2.jpg in Resources */,
@@ -549,6 +606,7 @@
 				748D65361DCF81DB00F3658D /* 17.jpg in Resources */,
 				748D65461DCF81DB00F3658D /* icon1.jpg in Resources */,
 				748D65311DCF81DB00F3658D /* 12.jpg in Resources */,
+				74696CC61DEC739700595E32 /* Me.storyboard in Resources */,
 				748D65471DCF81DB00F3658D /* icon2.jpg in Resources */,
 				748D652D1DCF81DB00F3658D /* 0.jpg in Resources */,
 				748D652F1DCF81DB00F3658D /* 10.jpg in Resources */,
@@ -636,18 +694,24 @@
 				74F314011DCB7DF80063D03C /* JDDate+Extension.swift in Sources */,
 				74C343881DD2069D009598E9 /* WCContactModel.swift in Sources */,
 				74D1D51D1DCCB7DB0083242E /* WCHomeCell.swift in Sources */,
+				743DFD1B1DEF17EA0096D979 /* WCTimeLineController.swift in Sources */,
 				74D1D5161DCCB74D0083242E /* WCRandomData.swift in Sources */,
+				743DFD211DEF1D230096D979 /* WCTimeLineCell.swift in Sources */,
 				74D1D5451DCCB8070083242E /* WCTabBarController.swift in Sources */,
 				74C343851DD1FB96009598E9 /* WCContactsSearchResultController.swift in Sources */,
 				74D1D5431DCCB8070083242E /* WCBaseTableController.swift in Sources */,
 				74D1D51C1DCCB7DB0083242E /* WCHomeTableController.swift in Sources */,
+				74696CC91DEC789100595E32 /* WCSearchController.swift in Sources */,
 				74D1D5411DCCB8070083242E /* WCContactsTableController.swift in Sources */,
+				74DB01A31DD4A3C9007926AE /* WCContactsCell.swift in Sources */,
 				74D1D5111DCCB72A0083242E /* JDConst.swift in Sources */,
 				74D1D5461DCCB8070083242E /* WCMeTableController.swift in Sources */,
+				74DB01A01DD49D9C007926AE /* JDArray+Extension.swift in Sources */,
 				74D1D51E1DCCB7DB0083242E /* WCHomeListModel.swift in Sources */,
 				74F313D21DCB68D80063D03C /* AppDelegate.swift in Sources */,
 				74D1D5421DCCB8070083242E /* WCDiscoverTableController.swift in Sources */,
 				74C343831DD1F568009598E9 /* WCEyeAnimationView.swift in Sources */,
+				743DFD1F1DEF1C6B0096D979 /* WCTimeLineCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

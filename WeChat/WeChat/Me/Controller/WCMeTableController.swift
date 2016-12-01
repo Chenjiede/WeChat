@@ -9,32 +9,17 @@
 import UIKit
 
 class WCMeTableController: UITableViewController {
+    
+    class func meController() -> WCMeTableController {
+        let vc = UIStoryboard.init(name: "Me", bundle: nil)
+        
+        return vc.instantiateInitialViewController() as! WCMeTableController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
-    
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 20
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        var cell = tableView.dequeueReusableCell(withIdentifier: "meCell")
-        if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: "meCell")
-        }
-
-        cell?.textLabel?.text = "message -- \(indexPath.row)"
-
-        return cell!
-    }
-    
 
     /*
     // Override to support conditional editing of the table view.

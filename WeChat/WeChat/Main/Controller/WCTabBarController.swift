@@ -22,18 +22,19 @@ class WCTabBarController: UITabBarController {
         addchildController(title: "通讯录", imageName: "tabbar_contacts", vc: contacts)
         
         // 发现
-        let discover = WCDiscoverTableController()
+        let discover = WCDiscoverTableController.discoverController()
         addchildController(title: "发现", imageName: "tabbar_discover", vc: discover)
         
         // 我
-        let me = WCMeTableController()
+        let me = WCMeTableController.meController()
         addchildController(title: "我", imageName: "tabbar_me", vc: me)
         
     }
     
     private func addchildController(title : String, imageName : String, vc : UIViewController) {
         
-        let nav = WCNavigationController(rootViewController: vc)
+        let nav = WCNavigationController()
+        nav.addChildViewController(vc)
         nav.title = title
         vc.navigationItem.title = title
         
@@ -41,11 +42,6 @@ class WCTabBarController: UITabBarController {
         nav.tabBarItem.selectedImage = UIImage.init(named: imageName + "HL")?.withRenderingMode(.alwaysOriginal)
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : Color(r: 0, g: 190, b: 12, a: 1.0)], for: .selected)
         addChildViewController(nav)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
